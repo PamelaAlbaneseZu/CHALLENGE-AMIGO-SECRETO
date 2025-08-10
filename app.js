@@ -1,7 +1,7 @@
-// Declarando variables
-
+//crea lista
 let listaAmigos = [];
 
+//declarando funciones
 function actualizarListaAmigos() {
     
 }
