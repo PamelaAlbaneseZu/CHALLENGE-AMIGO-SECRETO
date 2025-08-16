@@ -1,49 +1,47 @@
-//crea lista
+//crea lista y declara variable amigo
 let listaAmigos = [];
+let amigo = '';
+
 //declarando funciones
 function actualizarListaAmigos() {
-    document.querySelector
+
+    listaAmigos.length = 0;
+    console.log(listaAmigos);
+   
 }
+
 function agregarAmigos() {
-    nombre = document.getElementById("amigo").value
+
+    textoElemento('h2','Digite el nombre de sus amigos');
+    let nombre = document.getElementById("amigo").value
     if (nombre == false) {
-        alert ('Porfavor, inserte un nombre')
+        alert ('Porfavor, inserte el nombre de su amigo')
     }else {
         listaAmigos.push(nombre);
-        alert(`${nombre} fue registrado con exito!`);
-        limpiarCaja();
     }
     console.log(listaAmigos);
+    limpiarCaja();
     return;
 }
 
 function sortearAmigo() {
-    let listaSorteo = [];
-    let resultadoValido = true;
     
-    while (resultadoValido == true){
-        let aleatorio = Math.floor(Math.random()* listaAmigos.length);
-        let amigo = Math.floor(Math.random()* listaSorteo.length);
-        listaAmigos.push(aleatorio);
-        listaSorteo.push(amigo);
-        if (aleatorio == listaAmigos.legth) {
-            resultadoValido = true
-            break;
-        }
-        for (let i = 0; i <listaAmigos.length; i++) {
-            console.log(i);
-        }
-    }
-     
-
-
-    elemento = document.querySelector('h2');
-    elemento.innerHTML = `${listaAmigos[aleatorio]}`;
-    
-
-    
+    aleatorio = Math.floor(Math.random()* listaAmigos.length); 
+    console.log(listaAmigos[aleatorio]); 
+    amigo = listaAmigos[aleatorio];
+    textoElemento('h2',`Tu amigo secreto es ${amigo}`); 
+    actualizarListaAmigos();
+    return;
 }
 
 function limpiarCaja(){
+
     document.getElementById("amigo").value = '';
+}
+
+function textoElemento(elemento, texto){
+
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = texto;
+    return;
 }
